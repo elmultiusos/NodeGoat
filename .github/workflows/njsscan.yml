@@ -2,9 +2,9 @@ name: njsscan SAST
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [master, main]
   pull_request:
-    branches: [ master, main ]
+    branches: [master, main]
   workflow_dispatch:
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
       - name: Run njsscan (SARIF)
         uses: ajinabraham/njsscan-action@v7
         with:
-          args: '. --sarif --missing-controls -o results.sarif || true'
+          args: ". --sarif --missing-controls -o results.sarif || true"
 
       - name: Upload SARIF to GitHub Security
         uses: github/codeql-action/upload-sarif@v3
